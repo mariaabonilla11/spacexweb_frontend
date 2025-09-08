@@ -102,7 +102,7 @@ export default {
     async fetchStats() {
       try {
         const response = await axios.get(
-          "http://localhost:8000/api/v1/launches/stats/summary"
+          `${API_BASE_URL}/launches/stats/summary`
         );
         this.stats = response.data;
       } catch (error) {
@@ -122,6 +122,7 @@ export default {
     this.fetchStats();
   },
 };
+const API_BASE_URL = process.env.VUE_APP_API_BASE_URL;
 </script>
 
 <style scoped>
